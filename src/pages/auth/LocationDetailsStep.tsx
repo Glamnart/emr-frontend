@@ -15,13 +15,13 @@ export function LocationDetailsStep({
   return (
     <>
       <Field label="Location Name" error={errors.locationName?.message}>
-        <Input {...register("locationName")} />
+        <Input {...register("locationName")} className="w-full  px-4 py-3 placeholder-slate-500 rounded-lg border  outline-none transition-all duration-200 focus:border-[#647596] "/>
       </Field>
       <Field label="Location Address" error={errors.locationAddress?.message}>
-        <Input {...register("locationAddress")} />
+        <Input {...register("locationAddress")} className="w-full  px-4 py-3  placeholder-slate-500 rounded-lg border  outline-none transition-all duration-200 focus:border-[#647596] "/>
       </Field>
       <Field label="State" error={errors.state?.message}>
-        <Input {...register("state")} />
+        <Input {...register("state")} className="w-full  px-4 py-3 placeholder-slate-500 rounded-lg border  outline-none transition-all duration-200 focus:border-[#647596] "/>
       </Field>
     </>
   )

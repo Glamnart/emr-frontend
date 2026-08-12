@@ -1,13 +1,18 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
-@import "tailwindcss";
 @import "@fontsource-variable/inter";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-@custom-variant dark (&:is(.dark *));
 :root {
+  --auth-panel-gradient: radial-gradient(
+    140% 120% at 10% 100%,
+    #eaf2ff 0%,
+    #dce9fb 45%,
+    #ffffff 100%
+  );
+  --auth-panel-solid: #ffffff;
   --text: #6b6375;
   --text-h: #08060d;
   --bg: #fff;
@@ -20,8 +25,8 @@
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --sans: system-ui, "Segoe UI", Roboto, sans-serif;
+  --heading: system-ui, "Segoe UI", Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
 
   font: 18px/145% var(--sans);
@@ -96,10 +101,8 @@
 
   --sidebar-border: oklch(0.922 0 0);
 
-  --sidebar-ring: oklch(0.708 0 0)
+  --sidebar-ring: oklch(0.708 0 0);
 }
-
-
 
 @theme inline {
   --font-heading: var(--font-sans);
@@ -176,15 +179,32 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  --auth-panel-gradient: radial-gradient(
+    140% 120% at 10% 100%,
+    #1e3a5f 0%,
+    #16233f 45%,
+    #0b1220 100%
+  );
+  --auth-panel-solid: #111a2e;
 }
 
 @layer base {
-    body {
+  body {
     font-family: var(--font-sans);
   }
   * {
-    @apply border-border outline-ring/50;}
+    @apply border-border outline-ring/50;
+  }
   body {
-    @apply bg-background text-foreground;}
+    @apply bg-background text-foreground;
+  }
   html {
-    @apply font-sans;}}
+    @apply font-sans;
+  }
+    .auth-left-panel {
+    background: var(--auth-panel-gradient);
+  }
+  .auth-right-panel {
+    background: var(--auth-panel-solid);
+  }
+}
