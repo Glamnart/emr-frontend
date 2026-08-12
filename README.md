@@ -1,77 +1,80 @@
-# React + TypeScript + Vite
+# Frontend Repository
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, mobile-first Electronic Medical Record (EMR) and Hospital Management System built for healthcare providers across West Africa.
 
-Currently, two official plugins are available:
+The platform delivers a calm, intuitive experience for clinicians while providing patients with a consumer-grade mobile experience for appointments, payments, records, and care.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Vision
 
-## React Compiler
+Build healthcare software that feels human—fast, accessible, and never gets between clinicians and patient care.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Features
 
-Note: This will impact Vite dev & build performances.
+- Electronic Medical Records (EMR)
+- Role-based clinician workflows
+- Patient registration and verification
+- Real-time queues and appointments
+- Pharmacy and inventory management
+- Laboratory management
+- Billing, wallet, and digital payments
+- Mobile-first responsive experience
+- First-class Light & Dark mode
+- Multi-tenant architecture with secure RBAC
+- Reporting and analytics
+- Interoperability and patient referrals
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Framework:** React.js 15
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **UI:** shadcn/ui
+- **State Management:** React Query + Zustand
+- **Forms:** React Hook Form + Zod
+- **API:** Generated OpenAPI client
+- **Package Manager:** pnpm
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Design Principles
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Mobile-first on every screen
+- Calm, distraction-free interfaces
+- Accessibility-first (WCAG AA)
+- Touch-friendly interactions
+- Consistent design system with shared components
+- Light and Dark mode by default
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Getting Started
 
+### Prerequisites
+
+- React.js 20+
+- pnpm
+
+### Installation
+
+```bash
+git clone https://github.com/Glamnart/emr-frontend.git
+cd emr-frontend
+pnpm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Core Principles
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **Mobile-first** — Every workflow is optimized for small screens before desktop.
+- **Human-centered** — Interfaces reduce cognitive load for clinicians.
+- **Secure by default** — Role-based access and tenant isolation.
+- **Shared contracts** — Typed APIs and shared schemas eliminate frontend/backend drift.
+- **Performance** — Optimized for low-bandwidth and real-world healthcare environments.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Roadmap
 
-```
+- Clinical workflows
+- Laboratory & Pharmacy
+- Billing & Digital Payments
+- Patient Mobile Experience
+- Scheduling & Specialties
+- Interoperability & Analytics
+
+---
+
+Built to make healthcare software simpler, faster, and more humane for clinicians and patients across West Africa.
