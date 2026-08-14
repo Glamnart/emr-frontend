@@ -145,8 +145,7 @@ export default function Signup() {
         <div className="flex justify-end">
           <ThemeToggle />
         </div>
-        <div className="flex justify-center">
-        <div className="w-[400px]">
+        <div className="">
           <WizardProgress currentStep={step} totalSteps={TOTAL_STEPS} />
           <span className="text-[11px] font-bold  text-[#0284C7] text-left uppercase mt-2">
             clinician portal
@@ -249,8 +248,6 @@ export default function Signup() {
             </div>
           </form>
         </div>
-        </div>
-
       </div>
     </div>
   );
