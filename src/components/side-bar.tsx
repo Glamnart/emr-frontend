@@ -1,63 +1,70 @@
 import NavItem from "./nav-items";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import {
-  faShield, faGridVertical, faSearch, faUsers, faLayerGroup, faCalendar, faUserPlus, faBaby, 
-  faClipboardCheck, faCapsules, faBox, faFlask, faStethoscope, faCreditCard, faShieldHalved,
+import { faShield, faGear, faCircleQuestion, faChevronRight, faArrowRightFromBracket} from "@fortawesome/free-solid-svg-icons"
+import { navItems } from "@/storage";
+import { useState } from "react";
 
-} from "@fortawesome/free-solid-svg-icons"
-
-import type { NavItemsProps } from "./nav-items";
-
-const navItems: NavItemsProps[] = [
-  {img:<FontAwesomeIcon icon={faGridVertical}/>, name:"Dashboard", link:"#", alert:0},
-  {img:<FontAwesomeIcon icon={faSearch}/>, name:"Search", link:"#", alert:0},
-  {img:<FontAwesomeIcon icon={faUsers}/>, name:"Patients", link:"#", alert:0},
-  {img:<FontAwesomeIcon icon={faLayerGroup}/>, name:"Queues", link:"#", alert:0},
-  {img:<FontAwesomeIcon icon={faCalendar}/>, name:"Appointments", link:"#", alert:3},
-  {img:<FontAwesomeIcon icon={faUserPlus}/>, name:"Registration", link:"#", alert:0},
-  {img:<FontAwesomeIcon icon={faBaby}/>, name:"Maternity", link:"#", alert:0},
-  {img:<FontAwesomeIcon icon={faClipboardCheck}/>, name:"Tasks", link:"#", alert:0},
-  {img:<FontAwesomeIcon icon={faCapsules}/>, name:"Pharmacy", link:"#", alert:0},
-  {img:<FontAwesomeIcon icon={faBox}/>, name:"Inventory Control", link:"#", alert:0},
-  {img:<FontAwesomeIcon icon={faFlask}/>, name:"Lab", link:"#", alert:0},
-  {img:<FontAwesomeIcon icon={faStethoscope}/>, name:"Procedures", link:"#", alert:0},
-  {img:<FontAwesomeIcon icon={faCreditCard}/>, name:"Billing Management", link:"#", alert:0},
-  {img:<FontAwesomeIcon icon={faShieldHalved}/>, name:"Compliance", link:"#", alert:0}
-]
-
- 
-export default function NavBar(){
-  function printNavItems(sect:"overview"|"nursing"|"clinical"|"governance"){
-    let i:number,j:number
-    switch(sect){
-      case "overview": 
-        i = 0;j = 2
-        break;
-      case "clinical": 
-        i = 2; j = 10
-        break;
-      case "nursing": 
-        i = 10 ;j = 12
-        break;
-      default: 
-        i = 12 ; j = 14
-        break;
-    }
-    return navItems.slice(i,j).map((({img,name,link,alert}) => <NavItem img={img}  name = {name} link={link} alert={alert} />))
-    
-  }
-  return<div className=" h-full overflow-y-auto flex flex-col gap-2 font-light text-[10px] pl-6 border-r border-b-gray-800 scrollbar-thin w-40 scrollbar-thumb-card">
-    <div className="flex flex-row items-center gap-1.5 pt-5 ">
-        <FontAwesomeIcon icon={faShield}/>
-        <p className="font-bold">SERENE EMR</p>
-    </div> 
-    <span>Overview</span>
-    {printNavItems("overview")}
-    <span>Clinical Operations</span>
-    {printNavItems("clinical")}
-    <span>Nursing</span>
-    {printNavItems("nursing")}
-    <span>Governance</span>
-    {printNavItems("governance")}
-   </div>
+interface SideBarProp{
+  page: string
 }
+
+const NavBar : React.FC<SideBarProp> = ({page})=>{
+  const [settingsDown, setSettingsDown] = useState(false);
+  const [helpDown, setHelpDown] = useState(false);
+
+  function printNavItems(sect:"overview"|"nursing"|"clinical"|"governance"){
+    return navItems.filter(({category})=> category == sect).map((({img,name,link,alert},i) => <NavItem key={i} img={img}  name = {name} link={link} alert={alert} page={page} />))
+  }
+  return<div className=" h-full overflow-y-auto flex flex-col gap-1.5 font-light text-[13px] pl-4 w-53 border-r border-b-gray-800 scrollbar-thin scrollbar-thumb-card pr">
+    <div className="flex flex-row items-center gap-1.5 pt-5 pb-2 ">
+        <FontAwesomeIcon className="bg-sky-500 rounded-md text-white p-2" icon={faShield}/>
+        <p className="font-bold text-sm">SERENE EMR</p>
+    </div> 
+    <span className="mt-2.5 pl-2.5 text-gray-400 font-semibold">OVERVIEW</span>
+    {printNavItems("overview")}
+    <span className="mt-2.5 pl-2.5 text-gray-400 font-semibold">CLINICAL OPERATIONS</span>
+    {printNavItems("clinical")}
+    <span className="mt-2.5 pl-2.5 text-gray-400 font-semibold">NURSING</span>
+    {printNavItems("nursing")}
+    <span className="mt-2.5 pl-2.5 text-gray-400 font-semibold">GOVERANCE</span>
+    {printNavItems("governance")}
+    <div>
+      <button onClick={()=> setSettingsDown(!settingsDown)} className="flex rounded-lg h-9 pl-2 w-45 text-gray-400 font-medium flex-row items-center gap-1.5 cursor-pointer hover:bg-gray-100">
+        <FontAwesomeIcon icon={faGear}/>
+        <span className="text-gray-600">Settings</span>
+        <FontAwesomeIcon className="ml-15 text-xs" icon={faChevronRight}/>
+      </button>
+      <div className={`${ settingsDown ? "flex flex-col pl-7 text-[12px] text-gray-500" : "hidden"}`}>
+        <a className="hover:text-sky-500" href="#">Profile</a>
+        <a className="hover:text-sky-500" href="#">Staff</a>
+        <a className="hover:text-sky-500" href="#">Features</a>
+        <a className="hover:text-sky-500" href="#">Forms</a>
+      </div>
+    </div>
+    <div>
+      <button onClick={()=> setHelpDown(!helpDown)} className="flex rounded-lg h-9 pl-2 w-45 text-gray-400 font-medium flex-row items-center gap-1.5 cursor-pointer hover:bg-gray-100">
+        <FontAwesomeIcon icon={faCircleQuestion}/>
+        <span className="text-gray-600">Help</span>
+        <FontAwesomeIcon className="ml-20 text-xs" icon={faChevronRight}/>
+      </button>
+      <div className={`${ helpDown ? "flex flex-col pl-7 text-[12px] text-gray-500" : "hidden"}`}>
+        <a className="hover:text-sky-500" href="#">User Guide</a>
+        <a className="hover:text-sky-500" href="#">Support Desk</a>
+        <a className="hover:text-sky-500" href="#">FAQs</a>
+        <a className="hover:text-sky-500" href="#">System Status</a>
+      </div>
+    </div>
+    <div className="flex border-t -ml-5 items-center">
+      <div className="flex flex-row border rounded-lg items-center justify-center w-45 p-1.5 text-gray-400 mt-5 mb-5 ml-4">
+        <img src="src/assets/staffBadge.png" className="w-8 h-8 border border-blue-100  rounded-full"/>
+        <div className="flex-1 flex flex-col ml-2 font-xs">
+          <div className="font-bold -mb-1.5 text-gray-800">Dr. Sarah Chen</div>
+          <div>Super Admin</div>
+        </div>
+        <a href="#"><button className="cursor-pointer hover:text-gray-500"><FontAwesomeIcon icon={faArrowRightFromBracket}/></button></a>
+      </div>
+    </div>
+  </div>
+}
+
+export default NavBar;
