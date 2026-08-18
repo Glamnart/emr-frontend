@@ -21,3 +21,18 @@ export interface StatusBoxProp{
     name: "Today's Patients"|"Patients Visited"|"New Admits"|"Avg. Queue Time",
     value: number|string
 }
+
+export interface EventItem {
+  id: string;
+  title: string;
+  startTime: string;
+  endTime: string;
+  date: Date;
+}
+
+export interface CurvedGraphInfo {
+  month: string, 
+  newPatients: number,
+  returningPatients: number 
+  dataPoint?:boolean
+}

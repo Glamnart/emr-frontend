@@ -3,6 +3,7 @@ import SearchBar from "@/components/search-bar";
 import Status from "@/components/dasboard-components/status";
 import Actions from "@/components/dasboard-components/actions";
 import Insights from "@/components/dasboard-components/insights";
+import Scheduling from "@/components/dasboard-components/scheduling";
 
 const Dashboard = ()=>{
     return <div className="flex h-lvh overflow-hidden bg-white">
@@ -15,6 +16,9 @@ const Dashboard = ()=>{
                     <Actions/>
                 </div>
                 <Insights/>
+            </div>
+            <div>
+                <Scheduling/>
             </div>
         </div>
     </div>

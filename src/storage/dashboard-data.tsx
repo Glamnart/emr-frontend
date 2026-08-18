@@ -1,6 +1,7 @@
-import type { StatusBoxProp } from "@/types/types";
+import type { CurvedGraphInfo, StatusBoxProp } from "@/types/types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUsers, faEye, faBed, faStopwatch } from "@fortawesome/free-solid-svg-icons";
+import type { EventItem } from "@/types/types";
 
 export const statusSummary: StatusBoxProp[] = [
     {color1: "bg-sky-500", color2: "bg-sky-600", color3: "bg-sky-400", img:<FontAwesomeIcon icon={faUsers}/>, positive: true, percent: 12.5, name:"Today's Patients", value:245},
@@ -9,7 +10,7 @@ export const statusSummary: StatusBoxProp[] = [
     {color1: "bg-violet-400", color2: "bg-violet-500", color3: "bg-violet-300", img:<FontAwesomeIcon icon={faStopwatch}/>, positive: false, percent: 2, name:"Avg. Queue Time", value:"45min"}
 ]
 
-export const curveGraphData = [
+export const curveGraphData:CurvedGraphInfo[] = [
   { month: "Jan", newPatients: 130, returningPatients: 65 },
   { month: "Feb", newPatients: 200, returningPatients: 120 },
   { month: "Mar", newPatients: 260, returningPatients: 170 },
@@ -23,3 +24,7 @@ export const curveGraphData = [
   { month: "Nov", newPatients: 270, returningPatients: 170 },
   { month: "Dec", newPatients: 275, returningPatients: 180 },
 ];
+
+export const plannedEvents:EventItem[] =[
+    { id: "1", title: "Board Meeting", startTime: "10:30 AM", endTime: "11:30 AM", date: new Date(2026, 7, 25)},
+]
