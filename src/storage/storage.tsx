@@ -1,9 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {faGridVertical, faSearch, faUsers, faLayerGroup, faCalendar, faUserPlus, faBaby, 
   faClipboardCheck, faCapsules, faBox, faFlask, faStethoscope, faCreditCard, faShieldHalved,
-
+  faStore,faPalette
 } from "@fortawesome/free-solid-svg-icons"
-import type { NavItemsProps } from "@/types";
+import type { NavItemsProps } from "@/types/types";
 
 export const navItems: NavItemsProps[] = 
 [
@@ -16,9 +16,11 @@ export const navItems: NavItemsProps[] =
   {category: "clinical", img:<FontAwesomeIcon icon={faBaby}/>, name:"Maternity", link:"#", alert:0},
   {category: "clinical", img:<FontAwesomeIcon icon={faClipboardCheck}/>, name:"Tasks", link:"#", alert:0},
   {category: "clinical", img:<FontAwesomeIcon icon={faCapsules}/>, name:"Pharmacy", link:"#", alert:0},
-  {category: "clinical", img:<FontAwesomeIcon icon={faBox}/>, name:"Inventory Control", link:"#", alert:0},
+  {category: "clinical", img:<FontAwesomeIcon icon={faStore}/>, name:"Inventory Control", link:"#", alert:0},
+  {category: "clinical", img:<FontAwesomeIcon icon={faBox}/>, name:"Store", link:"#", alert:3},
   {category: "nursing", img:<FontAwesomeIcon icon={faFlask}/>, name:"Lab", link:"#", alert:0},
   {category: "nursing", img:<FontAwesomeIcon icon={faStethoscope}/>, name:"Procedures", link:"#", alert:0},
   {category: "governance", img:<FontAwesomeIcon icon={faCreditCard}/>, name:"Billing Management", link:"#", alert:0},
-  {category: "governance", img:<FontAwesomeIcon icon={faShieldHalved}/>, name:"Compliance", link:"#", alert:0}
+  {category: "governance", img:<FontAwesomeIcon icon={faShieldHalved}/>, name:"Compliance", link:"#", alert:0},
+  {category: "governance", img:<FontAwesomeIcon icon={faPalette}/>, name:"Color Palette & Tokens", link:"#", alert:0}
 ]

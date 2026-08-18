@@ -1,12 +1,9 @@
 import NavItem from "./nav-items";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faShield, faGear, faCircleQuestion, faChevronRight, faArrowRightFromBracket} from "@fortawesome/free-solid-svg-icons"
-import { navItems } from "@/storage";
+import { navItems } from "@/storage/storage";
 import { useState } from "react";
-
-interface SideBarProp{
-  page: string
-}
+import type { SideBarProp } from "@/types/types";
 
 const NavBar : React.FC<SideBarProp> = ({page})=>{
   const [settingsDown, setSettingsDown] = useState<boolean>(false);

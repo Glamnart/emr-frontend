@@ -30,7 +30,7 @@ const SearchBar: React.FC = () => {
   });
 
   return (
-    <div className="flex items-center gap-2.5 bg-gray-100 h-15 pl-5 text-gray-500 border-b ">
+    <div className="flex items-center gap-2.5 h-15 pl-5 text-gray-500 border-b ">
       <button className="border rounded-full w-7 h-7 bg-white text-xs hover:text-black cursor-pointer hover:bg-gray-100 hover:w-8 hover:h-8">
         <FontAwesomeIcon icon={faArrowLeft} />
       </button>
