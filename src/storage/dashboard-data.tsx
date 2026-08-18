@@ -1,7 +1,6 @@
-import type { CurvedGraphInfo, StatusBoxProp } from "@/types/types";
+import type { CurvedGraphInfo, StatusBoxProp, EventItem, DailyTrend, MonthlyTrend} from "@/types/types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUsers, faEye, faBed, faStopwatch } from "@fortawesome/free-solid-svg-icons";
-import type { EventItem } from "@/types/types";
 
 export const statusSummary: StatusBoxProp[] = [
     {color1: "bg-sky-500", color2: "bg-sky-600", color3: "bg-sky-400", img:<FontAwesomeIcon icon={faUsers}/>, positive: true, percent: 12.5, name:"Today's Patients", value:245},
@@ -28,3 +27,34 @@ export const curveGraphData:CurvedGraphInfo[] = [
 export const plannedEvents:EventItem[] =[
     { id: "1", title: "Board Meeting", startTime: "10:30 AM", endTime: "11:30 AM", date: new Date(2026, 7, 25)},
 ]
+
+export const weeklyAppointmentData: DailyTrend[] = [
+    { day: "MON", completed: 42, scheduled: 30 },
+    { day: "TUE", completed: 64, scheduled: 46 },
+    { day: "WED", completed: 79, scheduled: 53 },
+    { day: "THU", completed: 60, scheduled: 42 },
+    { day: "FRI", completed: 85, scheduled: 62 },
+    { day: "SAT", completed: 49, scheduled: 57 },
+  ];
+
+  export const monthlyAppointmentData: MonthlyTrend[] = [
+    { month: "JAN", completed: 42, scheduled: 30 },
+    { month: "FEB", completed: 64, scheduled: 46 },
+    { month: "MAR", completed: 79, scheduled: 53 },
+    { month: "APR", completed: 60, scheduled: 42 },
+    { month: "JUN", completed: 85, scheduled: 62 },
+    { month: "JUL", completed: 49, scheduled: 57 },
+    { month: "AUG", completed: 80, scheduled: 75 },
+    { month: "SEP", completed: 62, scheduled: 20 },
+    { month: "OCT", completed: 90, scheduled: 0 },
+    { month: "NOV", completed: 70, scheduled: 50 },
+    { month: "DEC", completed: 22, scheduled: 22 }
+  ];
+
+ export const totalWeeklyCompleted:number = weeklyAppointmentData.reduce((acc, curr) => acc + curr.completed, 0);
+ export const totalWeeklyScheduled: number = weeklyAppointmentData.reduce((acc, curr) => acc + curr.scheduled, 0);
+ export const totalWeeklyAppointments:number = totalWeeklyCompleted + totalWeeklyScheduled;
+
+ export const totalMonthlyCompleted:number = monthlyAppointmentData.reduce((acc, curr) => acc + curr.completed, 0);
+ export const totalMonthlyScheduled: number = monthlyAppointmentData.reduce((acc, curr) => acc + curr.scheduled, 0);
+ export const totalMonthlyAppointments:number = totalMonthlyCompleted + totalMonthlyScheduled;

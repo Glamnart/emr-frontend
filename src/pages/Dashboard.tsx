@@ -4,6 +4,7 @@ import Status from "@/components/dasboard-components/status";
 import Actions from "@/components/dasboard-components/actions";
 import Insights from "@/components/dasboard-components/insights";
 import Scheduling from "@/components/dasboard-components/scheduling";
+import Analytics from "@/components/dasboard-components/analytics";
 
 const Dashboard = ()=>{
     return <div className="flex h-lvh overflow-hidden bg-white">
@@ -17,8 +18,9 @@ const Dashboard = ()=>{
                 </div>
                 <Insights/>
             </div>
-            <div>
+            <div className="flex m-4 gap-5">
                 <Scheduling/>
+                <Analytics/>
             </div>
         </div>
     </div>

@@ -32,7 +32,7 @@ const Scheduling: React.FC = ()=>{
   );
 
   return (
-    <div className="w-full max-w-97.5 bg-white rounded-3xl p-6 shadow-sm select-none h-90"> 
+    <div className="w-full max-w-95.5 bg-white rounded-3xl p-6 shadow-sm select-none h-fit"> 
       <div className="flex items-center justify-between mb-1 px-1">
         <h2 className="text-[#0ea5e9] font-bold text-[12px] tracking-wide">
           {format(currentMonth, "MMMM yyyy")}
@@ -53,7 +53,7 @@ const Scheduling: React.FC = ()=>{
         ))}
       </div>
 
-      <div className="grid grid-cols-7 gap-y-3 gap-x-1 text-center mb-8">
+      <div className="grid grid-cols-7 gap-y-3 gap-x-1 text-center mb-5">
         {daysInCalendarGrid.map((dayDate, index) => {
           const isCurrentMonthFlag = isSameMonth(dayDate, currentMonth);
           const isSelectedFlag = isSameDay(dayDate, selectedDate);

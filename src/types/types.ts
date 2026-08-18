@@ -36,3 +36,15 @@ export interface CurvedGraphInfo {
   returningPatients: number 
   dataPoint?:boolean
 }
+
+export interface DailyTrend {
+  day: string;
+  completed: number;
+  scheduled: number;
+}
+
+export interface MonthlyTrend {
+  month: string;
+  completed: number;
+  scheduled: number;
+}
