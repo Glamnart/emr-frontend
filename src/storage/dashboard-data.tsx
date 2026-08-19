@@ -1,4 +1,4 @@
-import type { CurvedGraphInfo, StatusBoxProp, EventItem, DailyTrend, MonthlyTrend} from "@/types/types";
+import type { CurvedGraphInfo, StatusBoxProp, EventItem, DailyTrend, MonthlyTrend, RecentPatientsProp} from "@/types/types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUsers, faEye, faBed, faStopwatch } from "@fortawesome/free-solid-svg-icons";
 
@@ -58,3 +58,8 @@ export const weeklyAppointmentData: DailyTrend[] = [
  export const totalMonthlyCompleted:number = monthlyAppointmentData.reduce((acc, curr) => acc + curr.completed, 0);
  export const totalMonthlyScheduled: number = monthlyAppointmentData.reduce((acc, curr) => acc + curr.scheduled, 0);
  export const totalMonthlyAppointments:number = totalMonthlyCompleted + totalMonthlyScheduled;
+
+ export const recentPatients: RecentPatientsProp[] = [
+  {pic:"src/assets/amlaWilson-photo.avif", name:"Amla Wilson", reason:"Flu Symptoms", time:"12:45"},
+  {pic:"src/assets/marcusWebb-photo.avif", name:"Marcus Webb", reason:"Fracture Care", time:"11:30"}
+ ]

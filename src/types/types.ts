@@ -48,3 +48,10 @@ export interface MonthlyTrend {
   completed: number;
   scheduled: number;
 }
+
+export interface RecentPatientsProp{
+  pic: string,
+  name: string,
+  reason: string,
+  time: string
+}
