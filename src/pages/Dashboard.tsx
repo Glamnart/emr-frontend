@@ -8,6 +8,7 @@ import Analytics from "@/components/dasboard-components/analytics";
 import RecentPatients from "@/components/dasboard-components/recent-patients";
 import MedicineRequest from "@/components/dasboard-components/medicine-request";
 import ReviewScore from "@/components/dasboard-components/review";
+import More from "@/components/dasboard-components/more";
 
 const Dashboard = ()=>{
     return <div className="flex h-lvh overflow-hidden bg-white">
@@ -31,6 +32,7 @@ const Dashboard = ()=>{
                 <ReviewScore/>
             </div>
         </div>
+        <More/>
     </div>
 }
 

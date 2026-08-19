@@ -3,7 +3,7 @@ import { recentPatients } from "@/storage/dashboard-data";
 
 const RecentPatients:React.FC = ()=>{
     function printPatients(){
-        return recentPatients.map(({pic,name,reason,time},i)=><button key={i} className="cursor-pointer flex items-center">
+        return recentPatients.map(({pic,name,reason,time},i)=><button key={i} className="cursor-pointer flex items-center hover:bg-gray-100 px-2 py-1 rounded-sm">
             <img src={pic} className="rounded-full h-10 w-10"/>
             <div className="flex flex-col ml-5 items-start">
                 <span className="text-[13px] font-bold">{name}</span>
