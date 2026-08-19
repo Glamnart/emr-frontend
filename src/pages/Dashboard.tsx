@@ -7,6 +7,7 @@ import Scheduling from "@/components/dasboard-components/scheduling";
 import Analytics from "@/components/dasboard-components/analytics";
 import RecentPatients from "@/components/dasboard-components/recent-patients";
 import MedicineRequest from "@/components/dasboard-components/medicine-request";
+import ReviewScore from "@/components/dasboard-components/review";
 
 const Dashboard = ()=>{
     return <div className="flex h-lvh overflow-hidden bg-white">
@@ -25,8 +26,9 @@ const Dashboard = ()=>{
                 <Analytics/>
                 <RecentPatients/>
             </div>
-            <div className="flex ml-5 mb-2">
+            <div className="flex mb-2 gap-4 m-4">
                 <MedicineRequest/>
+                <ReviewScore/>
             </div>
         </div>
     </div>

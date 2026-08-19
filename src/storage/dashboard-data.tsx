@@ -1,4 +1,4 @@
-import type { CurvedGraphInfo, StatusBoxProp, EventItem, DailyTrend, MonthlyTrend, RecentPatientsProp, MedicineRequestProp} from "@/types/types";
+import type { CurvedGraphInfo, StatusBoxProp, EventItem, DailyTrend, MonthlyTrend, RecentPatientsProp, MedicineRequestProp, ReviewsScoreProps} from "@/types/types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUsers, faEye, faBed, faStopwatch } from "@fortawesome/free-solid-svg-icons";
 
@@ -70,3 +70,5 @@ export const weeklyAppointmentData: DailyTrend[] = [
   {name: "Paliperidone Palmitate", count: 75, countType: "strip(s)",priority: "Next Week", timeCount: 1, timeUnit: "day(s)",status: "Delayed"},
   {name: "Serverin Injectable", count: 32, countType: "vial(s)",priority: "Urgent", timeCount: 8, timeUnit: "min(s)",status: "Pending"}
  ]
+
+ export const reviewScore : ReviewsScoreProps = {score: 88}

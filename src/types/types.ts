@@ -65,3 +65,7 @@ export interface MedicineRequestProp{
   timeUnit: "min(s)"|"day(s)"|"hour(s)",
   status: "Pending" | "On Time" | "Delayed"
 }
+
+export interface ReviewsScoreProps {
+  score: number;
+} 
