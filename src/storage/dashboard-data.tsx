@@ -1,4 +1,4 @@
-import type { CurvedGraphInfo, StatusBoxProp, EventItem, DailyTrend, MonthlyTrend, RecentPatientsProp} from "@/types/types";
+import type { CurvedGraphInfo, StatusBoxProp, EventItem, DailyTrend, MonthlyTrend, RecentPatientsProp, MedicineRequestProp} from "@/types/types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUsers, faEye, faBed, faStopwatch } from "@fortawesome/free-solid-svg-icons";
 
@@ -62,4 +62,11 @@ export const weeklyAppointmentData: DailyTrend[] = [
  export const recentPatients: RecentPatientsProp[] = [
   {pic:"src/assets/amlaWilson-photo.avif", name:"Amla Wilson", reason:"Flu Symptoms", time:"12:45"},
   {pic:"src/assets/marcusWebb-photo.avif", name:"Marcus Webb", reason:"Fracture Care", time:"11:30"}
+ ]
+
+ export const medicineRequests: MedicineRequestProp[] = [
+  {name: "Desmopressin Tabs", count: 200, countType: "strip(s)",priority: "Urgent", timeCount: 10, timeUnit: "min(s)",status: "Pending"},
+  {name: "Abciximab Injection", count: 50, countType: "vial(s)",priority: "Next Week", timeCount: 5, timeUnit: "min(s)",status: "On Time"},
+  {name: "Paliperidone Palmitate", count: 75, countType: "strip(s)",priority: "Next Week", timeCount: 1, timeUnit: "day(s)",status: "Delayed"},
+  {name: "Serverin Injectable", count: 32, countType: "vial(s)",priority: "Urgent", timeCount: 8, timeUnit: "min(s)",status: "Pending"}
  ]

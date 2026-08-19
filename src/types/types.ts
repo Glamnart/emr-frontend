@@ -55,3 +55,13 @@ export interface RecentPatientsProp{
   reason: string,
   time: string
 }
+
+export interface MedicineRequestProp{
+  name: string;
+  count: number,
+  countType: "vial(s)"|"strip(s)",
+  priority: "Urgent"|"Next Week",
+  timeCount: number,
+  timeUnit: "min(s)"|"day(s)"|"hour(s)",
+  status: "Pending" | "On Time" | "Delayed"
+}
