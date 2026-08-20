@@ -38,13 +38,13 @@ export interface CurvedGraphInfo {
 }
 
 export interface DailyTrend {
-  day: string;
+  unit: string;
   completed: number;
   scheduled: number;
 }
 
 export interface MonthlyTrend {
-  month: string;
+  unit: string;
   completed: number;
   scheduled: number;
 }
