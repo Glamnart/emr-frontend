@@ -29,26 +29,26 @@ export const plannedEvents:EventItem[] =[
 ]
 
 export const weeklyAppointmentData: DailyTrend[] = [
-    { day: "MON", completed: 42, scheduled: 30 },
-    { day: "TUE", completed: 64, scheduled: 46 },
-    { day: "WED", completed: 79, scheduled: 53 },
-    { day: "THU", completed: 60, scheduled: 42 },
-    { day: "FRI", completed: 85, scheduled: 62 },
-    { day: "SAT", completed: 49, scheduled: 57 },
+    { unit: "MON", completed: 42, scheduled: 30 },
+    { unit: "TUE", completed: 64, scheduled: 46 },
+    { unit: "WED", completed: 79, scheduled: 53 },
+    { unit: "THU", completed: 60, scheduled: 42 },
+    { unit: "FRI", completed: 85, scheduled: 62 },
+    { unit: "SAT", completed: 49, scheduled: 57 },
   ];
 
   export const monthlyAppointmentData: MonthlyTrend[] = [
-    { month: "JAN", completed: 42, scheduled: 30 },
-    { month: "FEB", completed: 64, scheduled: 46 },
-    { month: "MAR", completed: 79, scheduled: 53 },
-    { month: "APR", completed: 60, scheduled: 42 },
-    { month: "JUN", completed: 85, scheduled: 62 },
-    { month: "JUL", completed: 49, scheduled: 57 },
-    { month: "AUG", completed: 80, scheduled: 75 },
-    { month: "SEP", completed: 62, scheduled: 20 },
-    { month: "OCT", completed: 90, scheduled: 0 },
-    { month: "NOV", completed: 70, scheduled: 50 },
-    { month: "DEC", completed: 22, scheduled: 22 }
+    { unit: "JAN", completed: 42, scheduled: 30 },
+    { unit: "FEB", completed: 64, scheduled: 46 },
+    { unit: "MAR", completed: 79, scheduled: 53 },
+    { unit: "APR", completed: 60, scheduled: 42 },
+    { unit: "JUN", completed: 85, scheduled: 62 },
+    { unit: "JUL", completed: 49, scheduled: 57 },
+    { unit: "AUG", completed: 80, scheduled: 75 },
+    { unit: "SEP", completed: 62, scheduled: 20 },
+    { unit: "OCT", completed: 90, scheduled: 0 },
+    { unit: "NOV", completed: 70, scheduled: 50 },
+    { unit: "DEC", completed: 22, scheduled: 22 }
   ];
 
  export const totalWeeklyCompleted:number = weeklyAppointmentData.reduce((acc, curr) => acc + curr.completed, 0);

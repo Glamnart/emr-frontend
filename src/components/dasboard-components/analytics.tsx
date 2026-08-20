@@ -48,12 +48,12 @@ const Analytics: React.FC = ()=>{
 
       <div className="w-full h-70 pr-2">
         <ResponsiveContainer width="100%" height="100%">
-          <BarChart data = { viewType === "weekly"? weeklyAppointmentData : monthlyAppointmentData} margin={{ top: 0, right: 5, left: -25, bottom: 75 }} barGap={8}>
+          <BarChart data = {viewType === "weekly"? weeklyAppointmentData : monthlyAppointmentData} margin={{ top: 0, right: 5, left: -25, bottom: 75 }} barGap={8}>
             
             <CartesianGrid  vertical={false} horizontal={false} />
             
             <XAxis 
-              dataKey={viewType === "weekly"? "day" : "month"} 
+              dataKey={"unit"} 
               axisLine={false} 
               tickLine={false} 
               tick={{ fill: '#94a3b8', fontSize: 11, fontWeight: 600 }}
