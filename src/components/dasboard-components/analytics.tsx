@@ -13,25 +13,25 @@ import { weeklyAppointmentData,monthlyAppointmentData,totalMonthlyAppointments,t
 const Analytics: React.FC = ()=>{
     const [viewType, setViewType] = useState<"weekly" | "monthly">("weekly");
 
-    return <div className="flex flex-col bg-white rounded-lg shadow-sm p-4 w-150">
+    return <div className="flex flex-col bg-white rounded-lg shadow-sm p-4 w-150 dark:bg-gray-800">
         <div className="flex items-center mb-3">
             <div className="flex flex-col">
-                <span className="font-bold text-sm -mb-1"> Appointment Analytics</span>
+                <span className="font-bold text-sm -mb-1 dark:text-white"> Appointment Analytics</span>
                 <span className="text-[12px] text-gray-400">Overview of appointment trends</span>
             </div> 
-             <div className="bg-gray-100 p-1 rounded-full flex items-center ml-auto">
+             <div className="bg-gray-100 p-1 rounded-full flex items-center ml-auto dark:bg-gray-700">
           <button onClick={() => setViewType("weekly")} className={`px-4 py-1.5 text-xs font-bold rounded-full transition-all ${
-              viewType === "weekly" ? "bg-white text-sky-400 shadow-sm" : "text-gray-500 hover:text-gray-600"}`}>
+              viewType === "weekly" ? "bg-white text-sky-400 shadow-sm dark:bg-[#04060b] dark:text-white" : "text-gray-500 hover:text-gray-600"}`}>
             Weekly
           </button>
           <button
             onClick={() => setViewType("monthly")} className={`px-4 py-1.5 text-xs font-bold rounded-full transition-all ${
-              viewType === "monthly"? "bg-white text-sky-500 shadow-sm": "text-gray-400 hover:text-gray-600"}`}>
+              viewType === "monthly"? "bg-white text-sky-500 shadow-sm dark:bg-[#0e172a] dark:text-white": "text-gray-400 hover:text-gray-600"}`}>
             Monthly
           </button>
         </div>
       </div>
-      <div className="bg-gray-100 rounded-md flex justify-around py-1.5">
+      <div className="bg-gray-100 rounded-md flex justify-around py-1.5 dark:bg-[#0e172a]">
         <div className="flex flex-col items-center ">
             <span className="text-gray-500 text-[10px]">TOTAL APPOINTMENTS</span>
             <span className="text-sky-600 font-bold text-lg -mt-1">{viewType === "weekly"? totalWeeklyAppointments : totalMonthlyAppointments}</span>
@@ -50,7 +50,7 @@ const Analytics: React.FC = ()=>{
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data = { viewType === "weekly"? weeklyAppointmentData : monthlyAppointmentData} margin={{ top: 0, right: 5, left: -25, bottom: 75 }} barGap={8}>
             
-            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
+            <CartesianGrid  vertical={false} horizontal={false} />
             
             <XAxis 
               dataKey={viewType === "weekly"? "day" : "month"} 
@@ -74,7 +74,7 @@ const Analytics: React.FC = ()=>{
               content={({ active, payload }) => {
                 if (active && payload && payload.length) {
                   return (
-                    <div className="bg-white p-3 border border-[#e2e8f0] shadow-md rounded-xl text-xs font-semibold text-[#334155]">
+                    <div className="bg-white dark:bg-[#0e172a] p-3 border border-[#e2e8f0] shadow-md rounded-xl text-xs font-semibold text-[#334155]">
                       <p className="mb-1 text-[#94a3b8]">{payload[0].payload.day}</p>
                       <p className="text-sky-500">Completed: {payload[0].value}</p>
                       <p className="text-blue-300">Scheduled: {payload[1].value}</p>
@@ -107,11 +107,11 @@ const Analytics: React.FC = ()=>{
       <div className="flex items-center justify-center gap-6 -mt-17 text-xs font-bold text-[#334155]">
         <div className="flex items-center gap-2">
           <span className="w-3 h-3 bg-sky-500 rounded-full" />
-          <span className="text-[12px]">Completed</span>
+          <span className="text-[12px] dark:text-white">Completed</span>
         </div>
         <div className="flex items-center gap-2">
           <span className="w-3 h-3 bg-blue-300 rounded-full" />
-          <span className="text-[12px]">Scheduled</span>
+          <span className="text-[12px] dark:text-white">Scheduled</span>
         </div>
       </div>
     </div>

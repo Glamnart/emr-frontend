@@ -1,4 +1,5 @@
 import NavBar from "@/components/side-bar";
+import { useState } from "react";
 import SearchBar from "@/components/search-bar";
 import Status from "@/components/dasboard-components/status";
 import Actions from "@/components/dasboard-components/actions";
@@ -11,10 +12,11 @@ import ReviewScore from "@/components/dasboard-components/review";
 import More from "@/components/dasboard-components/more";
 
 const Dashboard = ()=>{
-    return <div className="flex h-lvh overflow-hidden bg-white">
+    const [theme, setTheme] = useState<"night"|"day">("day")
+    return <div className={`flex h-lvh overflow-hidden bg-white ${theme === "night" && "dark"}`}>
         <NavBar page="dashboard"/>
-        <div className="flex-1 h-full overflow-y-auto bg-gray-100 ">
-            <SearchBar/>
+        <div className="flex-1 h-full overflow-y-auto bg-gray-100 dark:bg-[#0e172a] ">
+            <SearchBar setTheme={setTheme} theme={theme}/>
             <div className="flex m-4 gap-5">
                 <div className="flex flex-col gap-5">
                     <Status/>

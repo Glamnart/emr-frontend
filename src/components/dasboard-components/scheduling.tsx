@@ -32,7 +32,7 @@ const Scheduling: React.FC = ()=>{
   );
 
   return (
-    <div className="w-full max-w-95.5 bg-white rounded-3xl p-6 shadow-sm select-none h-fit"> 
+    <div className="w-full max-w-95.5 bg-white rounded-3xl p-6 shadow-sm select-none h-fit dark:bg-gray-800"> 
       <div className="flex items-center justify-between mb-1 px-1">
         <h2 className="text-[#0ea5e9] font-bold text-[12px] tracking-wide">
           {format(currentMonth, "MMMM yyyy")}
@@ -59,11 +59,11 @@ const Scheduling: React.FC = ()=>{
           const isSelectedFlag = isSameDay(dayDate, selectedDate);
           
           // Style Assignment Logic based on Date Matrix State
-          let dayTextStyle = "text-[#334155] font-semibold";
+          let dayTextStyle = "text-[#334155] font-semibold dark:text-white dark:hover:text-black";
           let dayBackgroundStyle = "h-5 w-5 flex items-center justify-center rounded-xl text-[10px] transition-all hover:bg-slate-50";
 
           if (!isCurrentMonthFlag) {
-            dayTextStyle = "text-[#cbd5e1] font-medium pointer-events-none"; // Muted gray padding
+            dayTextStyle = "text-[#cbd5e1] font-medium pointer-events-none dark:text-gray-500"; // Muted gray padding
           } else if (isSelectedFlag) {
             dayTextStyle = "text-white font-bold hover:text-black";
             dayBackgroundStyle += " bg-[#0ea5e9] hover:bg-[#0ea5e9]"; // Highlight active theme color block
@@ -88,12 +88,12 @@ const Scheduling: React.FC = ()=>{
           activeDayEvents.map((event) => (
             <div 
               key={event.id} 
-              className="bg-[#f8fafc] rounded-2xl p-1 flex items-center border border-[#f1f5f9] animate-fade-in"
+              className="bg-[#f8fafc] rounded-2xl p-1 flex items-center border border-[#f1f5f9] animate-fade-in dark:bg-gray-700"
             >
-              <div className="w-1.25 h-10 bg-sky-500 rounded-full mr-4 shrink-0" />
+              <div className="w-1.25 h-10 bg-sky-500 rounded-full mr-4 ml-3 shrink-0" />
               
               <div className="flex flex-col">
-                <span className="text-[#1e293b] font-bold text-[13px] tracking-tight">
+                <span className="text-[#1e293b] font-bold text-[13px] tracking-tight dark:text-white">
                   {event.title}
                 </span>
                 <span className="text-[#94a3b8] text-[12px] font-medium mt-0.5">
@@ -104,7 +104,7 @@ const Scheduling: React.FC = ()=>{
           ))
         ) : (
           /*when a user clicks an empty day */
-          <div className="text-center py-3 border border-dashed border-[#e2e8f0] rounded-2xl text-[15px] text-[#94a3b8] font-medium">
+          <div className="text-center py-3 border border-dashed border-[#e2e8f0] rounded-2xl text-[15px] text-[#94a3b8] font-medium dark:bg-gray-700">
             No schedules found for this date.
           </div>
         )}

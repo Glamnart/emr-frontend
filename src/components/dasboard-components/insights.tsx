@@ -12,8 +12,8 @@ import {
 import { curveGraphData } from "@/storage/dashboard-data";
 
 const Insights: React.FC = ()=>{
- return<div className="flex flex-col bg-white rounded-lg shadow-sm p-4 ">
-        <span className="font-bold text-sm">Visitor Insights</span>
+ return<div className="flex flex-col bg-white rounded-lg shadow-sm p-4 dark:bg-gray-800">
+        <span className="font-bold text-sm dark:text-white">Visitor Insights</span>
         <div>
             <div className="w-150 h-55">
                 <ResponsiveContainer width={"100%"} height="100%">
@@ -35,7 +35,7 @@ const Insights: React.FC = ()=>{
                         tickLine={false} 
                         tick={{ fill: "#9ca3af", fontSize: 12 }}/>
                         
-                        <Tooltip />
+                        <Tooltip/>
 
                         <ReferenceLine 
                         x="Aug" 
@@ -72,7 +72,7 @@ const Insights: React.FC = ()=>{
                     </LineChart>
                 </ResponsiveContainer>
             </div>
-            <div className ="flex justify-center gap-6 mt-5 text-[14px] text-gray-600">
+            <div className ="flex justify-center gap-6 mt-5 text-[14px] text-gray-600 dark:text-white">
                 <div className ="flex items-center gap-2">
                     <div className="w-4 h-0.75 bg-sky-500 rounded-lg"></div>
                     <span>New Patients</span>

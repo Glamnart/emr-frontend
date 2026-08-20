@@ -19,13 +19,13 @@ const Status : React.FC = ()=>{
      function printBoxes(){
         return statusSummary.map(({img, positive, percent, name, value, color1, color2, color3},i) => <Box color1={color1} color2={color2} color3={color3} img={img} positive = {positive} percent = {percent} name = {name} value = {value} key={i} />)
     }
-    return<div className="flex flex-col bg-white rounded-lg shadow-sm p-4 w-fit">
+    return<div className="flex flex-col bg-white rounded-lg shadow-sm p-4 w-fit dark:bg-gray-800">
         <div className="flex items-center mb-2">
             <div className="flex flex-col">
-                <span className="font-bold text-sm -mb-1">Today's Status</span>
+                <span className="font-bold text-sm -mb-1 dark:text-white">Today's Status</span>
                 <span className="text-[12px] text-gray-400">Sales Summary</span>
             </div> 
-            <button className="ml-auto border rounded-md text-xs text-gray-500 w-20 h-7 cursor-pointer hover:bg-gray-100 shadow-sm"><FontAwesomeIcon icon={faDownload}/>Export</button>
+            <button className="ml-auto border rounded-md text-xs text-gray-500 w-20 h-7 cursor-pointer hover:bg-gray-100 shadow-sm dark:border-white dark:text-white dark:hover:text-gray-500"><FontAwesomeIcon icon={faDownload}/>Export</button>
         </div>
         <div className="flex gap-2">
             {printBoxes()}
